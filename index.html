@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serviços de Limpeza</title>
+  <meta name="description" content="Serviços profissionais de limpeza residencial e comercial. Orçamentos rápidos.">
+  <style>
+    :root{
+      --maxw: 1100px;
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial;
+      color:#fff;
+      line-height:1.6;
+      background:#000; /* fallback */
+      overflow-x:hidden;
+    }
+
+    /* Fundo fixo + overlay para contraste */
+    .bg{
+      position:fixed; inset:0; z-index:-2;
+      background:url("https://i.imgur.com/NfQefnj.jpeg") center/cover no-repeat fixed;
+    }
+    .overlay{
+      position:fixed; inset:0; z-index:-1;
+      background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.65) 40%, rgba(0,0,0,.75));
+      backdrop-filter:saturate(1.2);
+    }
+
+    /* Hero e conteúdo */
+    section{max-width:var(--maxw); margin:32px auto; padding:0 16px}
+    .hero{
+      max-width:var(--maxw); margin:0 auto; padding:48px 16px 32px;
+      display:grid; gap:18px;
+    }
+    .hero h1{font-size:clamp(28px,5vw,44px); line-height:1.15; margin:0}
+    .hero p{margin:0; opacity:.95}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid rgba(255,255,255,.2);
+      text-decoration:none; color:#fff;
+      background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.08));
+    }
+    .btn:hover{background:rgba(255,255,255,.25)}
+    .ghost{background:transparent}
+    .ghost:hover{background:rgba(255,255,255,.12)}
+
+    /* Cards/grades */
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(12,1fr)}
+    .card{
+      grid-column:span 12; padding:18px; border-radius:var(--radius);
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    @media (min-width:720px){
+      .card.third{grid-column:span 4}
+      .card.half{grid-column:span 6}
+    }
+    .card h3{margin:0 0 6px}
+    .muted{opacity:.9}
+
+    .svc{
+      display:flex; align-items:flex-start; gap:12px;
+      padding:10px 0; border-top:1px dashed rgba(255,255,255,.18);
+    }
+    .svc:first-child{border-top:0}
+    .svc .ico{
+      width:28px; height:28px; border-radius:8px; display:grid; place-items:center;
+      background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.18);
+      font-weight:700;
+    }
+
+    footer{
+      margin-top:48px; padding:18px 16px; text-align:center; opacity:.85;
+      border-top:1px solid rgba(255,255,255,.12); background:rgba(0,0,0,.35);
+    }
+    a{color:#fff}
+  </style>
+</head>
+<body>
+  <!-- Fundo + filtro -->
+  <div class="bg"></div>
+  <div class="overlay"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Serviços profissionais de limpeza<br>residencial & comercial</h1>
+    <p class="muted">Equipa de confiança, resultados consistentes e orçamentos rápidos. Mudanças, limpezas profundas, manutenção regular, escritórios e condomínios.</p>
+    <div class="cta">
+      <a class="btn" href="#contactos">Pedir orçamento</a>
+      <a class="btn ghost" href="#servicos">Ver serviços</a>
+    </div>
+    <div class="card" style="margin-top:8px;">
+      <strong>Atendimento:</strong> Grande Porto & Aveiro • <strong>Horário:</strong> 2ª–Sáb, 08:00–19:00
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <div class="grid">
+      <div class="card third">
+        <h3>Limpeza residencial</h3>
+        <p class="muted">Manutenção semanal, quinzenal ou pontual. Cozinhas, casas de banho, vidros, pavimentos e mais.</p>
+      </div>
+      <div class="card third">
+        <h3>Limpeza pós-obra / profunda</h3>
+        <p class="muted">Remoção de pó fino, detritos e marcas de obra. Preparação completa para a entrega do espaço.</p>
+      </div>
+      <div class="card third">
+        <h3>Escritórios & lojas</h3>
+        <p class="muted">Planos adaptados ao seu negócio com horários flexíveis e checklist personalizado.</p>
+      </div>
+
+      <div class="card half">
+        <h3>Pacotes mais pedidos</h3>
+        <div class="svc">
+          <div class="ico">✓</div>
+          <div><strong>Mudança (pré/pós)</strong><br><span class="muted">Limpeza completa para entrar ou entregar o imóvel impecável.</span></div>
+        </div>
+        <div class="svc">
+          <div class="ico">✓</div>
+          <div><strong>Profunda de cozinha & WC</strong><br><span class="muted">Desengorduramento, desinfeção, juntas e azulejos.</span></div>
+        </div>
+        <div class="svc">
+          <div class="ico">✓</div>
+          <div><strong>Vidros & envidraçados</strong><br><span class="muted">Interior e exterior, com acabamento sem marcas.</span></div>
+        </div>
+      </div>
+
+      <div class="card half">
+        <h3>Porque nós?</h3>
+        <ul>
+          <li>Equipa formada e de confiança</li>
+          <li>Materiais e produtos profissionais (ou usamos os seus, se preferir)</li>
+          <li>Orçamento claro e sem surpresas</li>
+          <li>Seguro de responsabilidade civil</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <h2>Sobre nós</h2>
+    <div class="card">
+      <p>Somos uma equipa focada em qualidade, pontualidade e comunicação. Trabalhamos com processos simples e checklist por serviço para garantir consistência em cada visita.</p>
+    </div>
+  </section>
+
+  <!-- Contactos -->
+  <section id="contactos">
+    <h2>Contactos</h2>
+    <div class="grid">
+      <div class="card half">
+        <p><strong>Telefone:</strong> <a href="tel:+351912345678">+351 912 345 678</a></p>
+        <p><strong>Email:</strong> <a href="mailto:orcamentos@empresa.pt">orcamentos@empresa.pt</a></p>
+        <p><strong>Morada:</strong> Rua Exemplo, 123, 4500-000 Cidade</p>
+        <p class="muted">Horário: 2ª–Sáb, 08:00–19:00</p>
+        <p><a href="termos.html">Termos e Condições</a> · <a href="privacidade.html">Política de Privacidade</a></p>
+      </div>
+      <div class="card half">
+        <form action="mailto:orcamentos@empresa.pt" method="post" enctype="text/plain">
+          <label>Nome<br><input name="nome" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:#fff"></label><br><br>
+          <label>Email<br><input type="email" name="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:#fff"></label><br><br>
+          <label>Mensagem<br><textarea name="mensagem" rows="4" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:#fff"></textarea></label><br><br>
+          <button class="btn" type="submit">Enviar pedido</button>
+        </form>
+        <p class="muted" style="margin-top:8px">Ao enviar, concorda com a nossa <a href="privacidade.html">Política de Privacidade</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Serviços de Limpeza — Todos os direitos reservados.
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
